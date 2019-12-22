@@ -38,7 +38,7 @@ func (t *Timer) StopSubTimer(id int) (time.Duration, error) {
 	s.state = Stopped
 	s.Time = t.elapsed
 
-	if t.stopOnSubtimersFinish && t.checkSubTimerFinish() {
+	if t.stopOnSubtimersStop && t.checkSubTimerFinish() {
 		t.StopTimer()
 	}
 
